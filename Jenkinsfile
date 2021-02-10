@@ -2,12 +2,25 @@ pipeline {
     agent any
     environment {
         DOCKER_TAG = DockerTag()
+        registry = "starseed777/nodejs"
+        registryCredential = "dockerhub"
+
     }
 
     stages {
         stage("Building docker image") {
             steps {
                 sh "docker build . -t starseed777/nodejs:${DOCKER_TAG}"
+            }
+        }
+
+        stage("Push built image to dockerhub") {
+            steps {
+                script{
+                   docker.withRegistry("",registryCredential) {
+                       sh "docker push starseed777/nodejs:{$DOCKER_TAG}"
+                   } 
+                }
             }
         }
 
