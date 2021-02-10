@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage("Building docker image") {
             steps {
-                sh "docker build -t starseed777/nodejs:${DOCKER_TAG}"
+                sh "docker build . -t starseed777/nodejs:${DOCKER_TAG}"
             }
         }
 
