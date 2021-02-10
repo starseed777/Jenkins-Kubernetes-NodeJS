@@ -1,0 +1,1 @@
+Simple nodeJS app to deploy to kubernetes via jenkins CI/CD >> image pushes to public container registry.
