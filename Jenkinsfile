@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script{
                    docker.withRegistry("",registryCredential) {
-                       sh "docker push starseed777/nodejs:{$DOCKER_TAG}"
+                    sh "docker push starseed777/nodejs:{$DOCKER_TAG}"
                    } 
                 }
             }
