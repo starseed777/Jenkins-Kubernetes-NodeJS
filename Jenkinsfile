@@ -35,9 +35,9 @@ pipeline {
 
                 script {
                     try {
-                        sh "ssh -i \"starseed.pem\" ec2-user@107.21.151.57 kubectl apply -f ."
+                        sh "ssh -i ~/home/ec2-user/\"starseed.pem\" ec2-user@107.21.151.57 kubectl apply -f ."
                     } catch(error) {
-                        sh "ssh -i \"starseed.pem\" ec2-user@107.21.151.57 kubectl create -f ."
+                        sh "ssh -i ~/home/ec2-user/\"starseed.pem\" ec2-user@107.21.151.57 kubectl create -f ."
                     }
                 }
             }
